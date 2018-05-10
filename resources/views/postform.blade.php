@@ -2,13 +2,13 @@
 
 @section('main_content')
 
-  {{ Form::open(['action' => 'PostController@Save']) }}
+  {{ Form::open(['action' => 'PostController@create']) }}
 
   {{ Form::label('PostTitle', 'Title') }}
   {{ Form::text('PostTitle') }} <br/>
 
   {{ Form::label('PostDescription', 'Description') }}
-  {{ Form::text('Description') }} <br/>
+  {{ Form::text('PostDescription') }} <br/>
 
   {{ Form::label('Img', 'Select File') }}
   {{ Form::file('image') }} <br/>
