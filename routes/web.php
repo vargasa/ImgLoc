@@ -19,4 +19,4 @@ Route::get('/post/', function () {
     return view('postform');
 });
 
-Route::post('PostControllerSave', array('uses' => 'PostController@Save'));
+Route::post('PostControllerSave', array('uses' => 'PostController@create'));
