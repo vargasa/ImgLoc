@@ -8,7 +8,15 @@ class Image extends Model
 {
 
     protected $fillable = ['description'];
-    public function user() {
-	return $this->belongsTo(User::Class);
+    
+    public function posts() {
+	return $this->belongsToMany('App\Post','image_maps');
     }
+
+    public function users() {
+	return $this->belongsTo('App\User');
+    }
+
+    
+   
 }

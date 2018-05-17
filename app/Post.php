@@ -9,12 +9,15 @@ class Post extends Model
 
     protected $fillable = ['title','description'];
     
-    public function user(){
-	return $this->belongsTo(User::Class);
+    public function images(){
+	return $this->belongsToMany('App\Image','image_maps');
     }
 
-    public function tagmap(){
-	return $this->hasMany(Tag::Class);
+    public function user(){
+	return $this->belongsTo('App\User');
     }
-    
+
+    public function tags(){
+	return $this->belongsToMany('App\Tag','tag_maps');
+    }
 }

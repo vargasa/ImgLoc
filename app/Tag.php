@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     protected $fillable = ['name'];
-    public function tagmap(){
-	return $this->belongsTo(TagMap::Class);
+
+    public function posts(){
+	return $this->belongsToMany('App\Post','tag_maps');
     }
+
 }
