@@ -5,27 +5,44 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Post as Post;
+use \App\User as User;
+use \App\Image as Image;
+use App\Http\Resources\PostResource as PostResource;
 
 class PostController extends Controller
 {
+
+    /////////////////////////////////////////////////////
+    public function index(){
+	return PostResource::collection(Post::all());
+    }
+
+    /////////////////////////////////////////////////////
+    public function show(Post $post){
+	return new PostResource($post);
+    }
+
+    /////////////////////////////////////////////////////
     public function create(Request $request) {
 
-	echo $request->get('PostTitle');
-	echo $request->get('PostDescription');
-	echo $request->file('Img');
-	echo $request->get('ImgLatitude');
-	echo $request->get('ImgLongitude');
+	/*
+	$post = Post::create([
+            'user_id' => auth()->user()->id,
+            'title' => $request->title,
+            'description' => $request->description,	    
+	]);
+	*/
 
-	echo "___";
+    }
+    
+    /////////////////////////////////////////////////////
+    public function update(){
 
     }
 
-    public function show($user_id,$post_id,$image_id){
-	$user = \App\User::find($user_id);
-	$post = \App\Post::find($post_id);
-	$image = \App\Image::find($image_id);
-	
-	return [$user,$user->posts()->get(),$user->images()->get()];
+    /////////////////////////////////////////////////////
+    public function delete(){
+
     }
     
 }

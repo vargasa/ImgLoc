@@ -15,8 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/post/', function () {
-    return view('postform');
-});
+Route::get('/post/{post}', 'PostController@show');
 
 Route::post('PostControllerSave', array('uses' => 'PostController@create'));

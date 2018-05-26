@@ -2,18 +2,20 @@
 
 @section('main_content')
 
-  <h1>{{ $title  }}</h1>
-  <img src="{{ $imgPath }}"> </img>
+  <h1>{{ $post->title  }}</h1>
+  <pre>{{$post->images }}</pre>
+  <img src="{{ $post->images[0]->filename }}"> </img>
+  <hr/>
+  <div id="map"></div>
+  <p>{{ $post->description }}</p>
   
   <hr/>
-  <p>{{ $description }}</p>
-  
-  <hr/>
-    <div id="map"></div>
-  
+
   <form>
-    <input id="ImgLatitude" type="hidden" value="{{ $imgLatitude }}" />
-    <input id="ImgLongitude" type="hidden" value="{{ $imgLongitude }}" />
+    @foreach ($post->images as $image)
+      <input class="ImgLatitude" type="hidden" value="{{ $image->latitude }}" onchange="locChanged()"/>
+      <input class="ImgLongitude" type="hidden" value="{{ $image->longitude }}" onchange="locChanged()"/>
+    @endforeach
   </form>
   
 @stop
