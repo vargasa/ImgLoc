@@ -11,6 +11,6 @@ class ImageMapTableSeeder extends Seeder
      */
     public function run()
     {
-	factory(App\ImageMap::class,50)->create();
+	factory(App\ImageMap::class,1000)->create();
     }
 }
