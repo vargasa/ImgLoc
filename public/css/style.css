@@ -1,0 +1,16 @@
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    padding: 0;
+    font-family: Nunito,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+#mainContent {
+    margin: 50px 20% 50px 20%;
+    padding: 20px 30px 20px 30px;
+}
+
+.mapPost {
+    height:250px;
+    width:500px;
+}
