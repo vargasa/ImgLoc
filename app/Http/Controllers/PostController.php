@@ -14,6 +14,7 @@ class PostController extends Controller
 
     /////////////////////////////////////////////////////
     public function index(){
+	// Need to restrict output to user scope
 	return PostResource::collection(Post::all());
     }
 

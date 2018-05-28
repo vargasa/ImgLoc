@@ -19,4 +19,8 @@ Route::get('/post/{post}', function(){
     return view('showpost');
 });
 
+Route::get('/user/', function() {
+    return view('showpost');
+});
+
 Route::post('PostControllerSave', array('uses' => 'PostController@create'));
