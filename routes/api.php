@@ -18,6 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('image','ImageController@index');
+Route::get('image/{image}','ImageController@show');
+Route::post('image','ImageController@create');
+Route::put('image/{image}','ImageController@update');
+Route::delete('image/{image}','ImageController@delete');
+
 Route::get('user','UserController@show');
 Route::post('user','UserController@create');
 Route::put('user','UserController@update');
